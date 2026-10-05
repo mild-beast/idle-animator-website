@@ -238,7 +238,7 @@
             <span>I agree to receive emails about Idle Animator and accept the <a href="privacy.html">privacy policy</a>.</span>
           </label>
           <p class="signup__status" id="signup-status" role="status"></p>
-          <p class="signup__note">Get an email when the beta opens and when the game is out. Unsubscribe any time with the link in any email. Your email address is sent to Brevo, the service that sends them, under <a href="https://www.brevo.com/en/legal/privacypolicy/" target="_blank" rel="nofollow noopener">Brevo's Privacy Policy</a>.</p>
+          <p class="signup__note">Your email address is sent to Brevo, the service that sends them, under <a href="https://www.brevo.com/en/legal/privacypolicy/" target="_blank" rel="nofollow noopener">Brevo's Privacy Policy</a>.</p>
         </form>
       </div>
 
@@ -285,7 +285,7 @@
         <article class="card">
           <div class="card__art"><img src="img/film-gertie.png" alt="A line drawing of Gertie the Dinosaur" loading="lazy"></div>
           <h3>Draw every frame</h3>
-          <p>Tap the paper and a drawing appears. Each one is a real frame from a real film, redrawn by hand.</p>
+          <p>Tap the paper and a drawing appears. Each one is a real frame from a real film.</p>
         </article>
         <article class="card">
           <div class="card__art">
@@ -298,7 +298,7 @@
         <article class="card">
           <div class="card__art card__art--object"><img src="img/chest.png" alt="A wooden treasure chest with gold trim" loading="lazy"></div>
           <h3>Let it run</h3>
-          <p>Automate a desk and it works by itself. Your studio keeps earning Cash while you are away.</p>
+          <p>Upgrade your staff to improve output. Managers help keep earning while you're away.</p>
         </article>
       </div>
     </div>
@@ -309,7 +309,7 @@
       <div class="booth">
         <p class="kicker">The archive</p>
         <h2>Premiere the films that started it all</h2>
-        <p class="booth__lead">Finish a film and it plays on the big screen. Along the way, collect cards of the animators who made them, from Winsor McCay to Max Fleischer.</p>
+        <p class="booth__lead">Finish a film and it plays on the big screen. Along the way, collect cards of the animators who made them, from Winsor McCay to Walt Disney.</p>
         <ul class="films">
           <li class="film">
             <img src="img/film-gertie.png" alt="Gertie the Dinosaur standing among rocks by a lake" loading="lazy">
@@ -404,11 +404,11 @@
     clearInterval(timer);
     if (auto) timer = setInterval(drawFrame, 1000 / FPS);
     automate.setAttribute('aria-pressed', String(auto));
-    automate.textContent = auto ? 'AUTO ON' : 'AUTOMATE';
+    automate.textContent = auto ? 'RUNNING' : 'AUTOMATE';
     automate.classList.toggle('btn--lime', auto);
     badge.textContent = auto ? 'AUTO ON' : 'AUTO OFF';
     badge.classList.toggle('is-on', auto);
-    say(auto ? 'Now the studio draws while you watch. That is the whole job!'
+    say(auto ? 'Now the studio draws while you watch. Easy as pie!'
              : 'Taking five? Press AUTOMATE to start again.');
     render();
   }
@@ -426,7 +426,7 @@
     sheet.appendChild(plus);
     if (auto) return;
     if (!unlocked) say('Keep going! ' + (UNLOCK_AT - drawn) + ' more and this desk can run itself.');
-    else if (drawn === UNLOCK_AT) say('That is one second of film. Now press AUTOMATE!');
+    else if (drawn === UNLOCK_AT) say('We\'re ready to go. Press AUTOMATE!');
   });
   automate.addEventListener('click', function () { setAuto(!auto); });
   document.addEventListener('visibilitychange', function () {
